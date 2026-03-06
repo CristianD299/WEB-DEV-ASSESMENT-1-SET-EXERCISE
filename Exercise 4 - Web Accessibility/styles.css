@@ -1,0 +1,63 @@
+body{
+    background:#eb5fa8;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+}
+
+
+.divider{
+    display:block;
+    width:430px;
+    margin:20px auto;
+}
+
+
+.gallery{
+    width:420px;
+    margin:0 auto;
+    position:relative;
+}
+
+/* shopping cart */
+.cart{
+    position:absolute;
+    top:-30px;     /* moves it slightly above the ocean photo */
+    right:-1px;   /* aligns with the photo corner */
+}
+
+.cart img{
+    width:30px;
+}
+
+
+figure{
+    margin:0;
+}
+
+figure img{
+    width:100%;
+    display:block;
+}
+
+/* captions */
+figcaption{
+    background:#efe8d3;
+    color:#59d6f1;
+    font-weight:bold;
+    padding:6px;
+    font-size:18px;
+}
+
+/* buttons */
+button{
+    margin-top:4px;
+}
+
+/* footer */
+footer{
+    margin:15px;
+}
+
+footer p{
+    font-weight:bold;
+}
