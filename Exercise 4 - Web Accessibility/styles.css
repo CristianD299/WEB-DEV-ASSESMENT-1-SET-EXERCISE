@@ -1,0 +1,260 @@
+/*
+  Accessible redesign styles.
+  Main design choices:
+  - soft neutral background instead of bright pink
+  - dark text for stronger contrast
+  - card-based layout with equal-height cards
+  - large, clear buttons and links
+  - visible keyboard focus styles
+*/
+
+/* Basic reset for predictable spacing and sizing. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #1f2933;
+  background: #f7f4ef;
+}
+
+/* Skip link stays hidden until focused by keyboard users. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: #111827;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Header area with a different design from the original page. */
+.site-header {
+  background: linear-gradient(135deg, #12344d, #27566b);
+  color: #ffffff;
+}
+
+.site-header__inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.brand {
+  max-width: 40rem;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.15;
+}
+
+.intro {
+  margin: 1rem 0 0 0;
+  max-width: 36rem;
+  font-size: 1.05rem;
+}
+
+/* Checkout link is styled like a button but remains a link semantically. */
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #12344d;
+  text-decoration: none;
+  font-weight: 700;
+  min-height: 3rem;
+}
+
+.cart-link img {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.page-main {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+/* Decorative divider kept small and centred. */
+.divider {
+  display: block;
+  max-width: 18rem;
+  width: 100%;
+  margin: 0 auto 1.5rem;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  color: #102a43;
+}
+
+/* Responsive card grid for the product list. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+/*
+  Each card is a vertical flex container.
+  This keeps every button aligned at the bottom,
+  even when text lengths differ.
+*/
+.photo-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(16, 42, 67, 0.08);
+}
+
+.photo-card__figure {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #d9e2ec;
+}
+
+.photo-card__figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card__content {
+  padding: 1rem 1rem 0.75rem;
+}
+
+.photo-card__content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+  color: #102a43;
+}
+
+.photo-card__content p {
+  margin: 0;
+}
+
+/*
+  margin-top: auto pushes the button to the bottom of each card.
+  This is what keeps all buttons at the same visual level.
+*/
+.basket-button {
+  margin-top: auto;
+  margin-inline: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: #0f6c7a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.site-footer {
+  border-top: 1px solid #d9e2ec;
+  background: #ffffff;
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+.site-footer nav,
+.site-footer p {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: #12344d;
+  font-weight: 700;
+}
+
+/* Shared interactive states for keyboard accessibility. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+/* Hover styles help sighted mouse users without replacing focus styles. */
+.cart-link:hover,
+.cart-link:active {
+  background: #e8f1f2;
+}
+
+.basket-button:hover,
+.basket-button:active {
+  background: #0b5560;
+}
+
+.footer-links a:hover,
+.footer-links a:active {
+  text-decoration-thickness: 2px;
+}
+
+/* Small-screen adjustments. */
+@media (max-width: 40rem) {
+  .site-header__inner {
+    padding-top: 1.5rem;
+  }
+
+  .cart-link {
+    width: 100%;
+    justify-content: center;
+  }
+}

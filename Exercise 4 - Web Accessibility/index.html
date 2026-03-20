@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Wondering Photographer</title>
+
+  <!--
+    Accessible redesign for the travel photography shop.
+    This version uses:
+    - clear page structure
+    - stronger colour contrast
+    - a visible heading and intro text
+    - consistent card layout so all action buttons line up
+    - clearer button labels and focus states
+  -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip link helps keyboard and screen-reader users jump past repeated content. -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Site header with brand text and checkout action. -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="brand">
+        <p class="eyebrow">Travel photography blog</p>
+        <h1>The Wondering Photographer</h1>
+        <p class="intro">
+          Explore a small collection of travel photographs and choose high-quality prints for your home.
+        </p>
+      </div>
+
+      <!--
+        The cart is a link because it takes the user to another page.
+        It includes text as well as an icon so it is not icon-only.
+      -->
+      <a class="cart-link" href="#" aria-label="Go to checkout page">
+        <img src="Media/shopping.svg" alt="" aria-hidden="true">
+        <span>Checkout</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <!-- Decorative divider image. Hidden from assistive technologies. -->
+    <img src="Media/TheDivider.png" class="divider" alt="" aria-hidden="true">
+
+    <!--
+      Product list uses a section with a heading for a clear landmark.
+      The cards are laid out in a responsive grid.
+    -->
+    <section class="gallery-section" aria-labelledby="prints-heading">
+      <div class="section-heading">
+        <p class="section-label">Available prints</p>
+        <h2 id="prints-heading">Choose a photograph</h2>
+      </div>
+
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <article class="photo-card">
+          <figure class="photo-card__figure">
+            <img src="Media/OceanPhoto.jpg" alt="People sitting on white cliffs overlooking the ocean in Greenland">
+          </figure>
+          <div class="photo-card__content">
+            <h3>Greenland Coast</h3>
+            <p>
+              This was from a fabulous trip to the coast of Greenland with my family.
+              The water was lovely, but very cold!
+            </p>
+          </div>
+          <!-- Button text is descriptive and all buttons align at the same level. -->
+          <button type="button" class="basket-button" aria-label="Add Greenland Coast photograph to basket">
+            Add Greenland Coast print to basket
+          </button>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="photo-card">
+          <figure class="photo-card__figure">
+            <img src="Media/BridgePhoto.jpg" alt="Golden Gate Bridge photographed from below looking up">
+          </figure>
+          <div class="photo-card__content">
+            <h3>Golden Gate Bridge</h3>
+            <p>
+              A picture of the Golden Gate Bridge in San Francisco,
+              photographed from below to emphasise its scale.
+            </p>
+          </div>
+          <button type="button" class="basket-button" aria-label="Add Golden Gate Bridge photograph to basket">
+            Add Golden Gate Bridge print to basket
+          </button>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="photo-card">
+          <figure class="photo-card__figure">
+            <img src="Media/ValleyPhoto.jpg" alt="Large river valley surrounded by mountains in Greenland">
+          </figure>
+          <div class="photo-card__content">
+            <h3>Greenland Valley</h3>
+            <p>
+              Another great photo from Greenland.
+              It shows a river valley where a glacier used to be.
+            </p>
+          </div>
+          <button type="button" class="basket-button" aria-label="Add Greenland Valley photograph to basket">
+            Add Greenland Valley print to basket
+          </button>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="photo-card">
+          <figure class="photo-card__figure">
+            <img src="Media/WaterfallPhoto.jpg" alt="Large waterfall falling into a rocky pool surrounded by mossy cliffs">
+          </figure>
+          <div class="photo-card__content">
+            <h3>Waterfall</h3>
+            <p>
+              The waterfall made such a lovely sound.
+              I could have fallen asleep listening to it.
+            </p>
+          </div>
+          <button type="button" class="basket-button" aria-label="Add Waterfall photograph to basket">
+            Add Waterfall print to basket
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer navigation is kept simple and clearly labelled. -->
+  <footer class="site-footer">
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About me</a></li>
+      </ul>
+    </nav>
+    <p>&copy; The Wondering Photographer 2018.</p>
+  </footer>
+</body>
+</html>
